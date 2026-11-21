@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="storage-error" role="alert">
+    <p>Some data could not be loaded from storage. Your saved data may have been corrupted.</p>
+  </div>
+
+  <main>
+
+    <!-- Greeting Widget -->
+    <section id="greeting" aria-label="Greeting">
+      <h1 id="greeting-time"></h1>
+      <p id="greeting-date"></p>
+      <p id="greeting-text"></p>
+    </section>
+
+    <!-- Focus Timer Widget -->
+    <section id="timer" aria-label="Focus Timer">
+      <h2>Focus Timer</h2>
+      <div id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button id="timer-start" type="button">Start</button>
+        <button id="timer-stop" type="button">Stop</button>
+        <button id="timer-reset" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- To-Do List Widget -->
+    <section id="todo" aria-label="To-Do List">
+      <h2>To-Do List</h2>
+      <div class="todo-input-row">
+        <input
+          id="todo-input"
+          type="text"
+          maxlength="250"
+          placeholder="Add a new task…"
+          aria-label="New task"
+        >
+        <button id="todo-add-btn" type="button">Add</button>
+      </div>
+      <ul id="todo-list" aria-label="Tasks"></ul>
+    </section>
+
+    <!-- Quick Links Widget -->
+    <section id="links" aria-label="Quick Links">
+      <h2>Quick Links</h2>
+      <div class="links-form">
+        <div class="form-field">
+          <label for="link-label">Label</label>
+          <input
+            id="link-label"
+            type="text"
+            maxlength="50"
+            placeholder="e.g. GitHub"
+            aria-label="Link label"
+          >
+          <span id="link-label-error" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="form-field">
+          <label for="link-url">URL</label>
+          <input
+            id="link-url"
+            type="url"
+            placeholder="https://example.com"
+            aria-label="Link URL"
+          >
+          <span id="link-url-error" role="alert" aria-live="polite"></span>
+        </div>
+        <button id="link-add-btn" type="button">Add Link</button>
+      </div>
+      <div id="link-list" aria-label="Saved links"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
